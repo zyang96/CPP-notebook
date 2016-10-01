@@ -135,11 +135,32 @@ int main()
 	itr = vec.end()-1;
 	cout << *itr << endl;
 	
-	cout << "=========vector swap elements iter_swap=========" << endl;
+	cout << "=========vector swap elements iter_swap()=========" << endl;
 	vector<int> vec1 = {1,2,3,4,5};
 	iter_swap(vec1.begin(), vec1.begin() + 1);
 	iter_swap(vec1.end() - 1, vec1.end() - 2);
 	for (auto iter : vec1) {
+		cout << iter << " ";
+	}
+	cout << endl;
+	cout << "=========vector swap elements in same vector swap()=========" << endl;
+	vector<int> vec2 = {1,2,3,4,5};
+	swap(vec2[0], vec2[2]);
+	for (auto iter : vec1) {
+		cout << iter << " ";
+	}
+	cout << endl;
+	cout << "=========vector swap elements in different vector2 swap()=========" << endl;
+	vec1 = {1,2,3,4,5};
+	vec2 = {10, 20, 30, 40, 50};
+	swap(vec1[0], vec2[0]);
+	cout << "new vector 1" << endl;
+	for (auto iter : vec1) {
+		cout << iter << " ";
+	}
+	cout << endl;
+	cout << "new vector 2" << endl;
+	for (auto iter : vec2) {
 		cout << iter << " ";
 	}
 	cout << endl;
