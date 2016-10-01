@@ -134,5 +134,14 @@ int main()
 	cout << *itr << endl;
 	itr = vec.end()-1;
 	cout << *itr << endl;
+	
+	cout << "=========vector swap elements iter_swap=========" << endl;
+	vector<int> vec1 = {1,2,3,4,5};
+	iter_swap(vec1.begin(), vec1.begin() + 1);
+	iter_swap(vec1.end() - 1, vec1.end() - 2);
+	for (auto iter : vec1) {
+		cout << iter << " ";
+	}
+	cout << endl;
 	return 0;
 }
