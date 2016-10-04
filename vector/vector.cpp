@@ -67,6 +67,12 @@ int main()
 	cout << "type of the itr is " << typeid(arrayItr).name() << endl;
 	cout << endl;
 	
+	cout << "==========find element and find the index of the element=====" << endl;
+	vector<int> nums = {1,10,3};
+	vector<int>::iterator iter = find(nums.begin(), nums.end(), 10);
+	cout << iter - nums.begin() << endl;
+	
+	
 	//Play with insert for both vector and array
 	//insert one element, (push the previous one backward)
 	vec.insert(vec.begin(), 100); //insert with begin() + 2, it's like put new value at index 2, and pushback the previous one to index 3
