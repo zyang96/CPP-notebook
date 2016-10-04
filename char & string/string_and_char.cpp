@@ -2,6 +2,7 @@
 #include <vector>
 #include <unordered_map>
 #include <string.h>
+#include <string>
 using namespace std;
 
 int main() {
@@ -38,12 +39,13 @@ int main() {
 	cout << myChar << endl;
 	
 	char * str = new char[100]; //it's a pointer a array of char or (actually its a string)  <==roughly but not the same, especially for multi-dimentional pointer with multi-dimentional array===> char * str = new char[100]
-	strcat(str,"asd"); // it will automaticallt extend the size of array because str is dynamically allocated
+	strcat(str,"asd"); // it will automatically extend the size of array because str is dynamically allocated
 	cout << str << endl;
 	cout << str[0] << endl;
 	
 	cout << "==========append string===========" << endl;
 	x.append("appending");
+	x.append("e"); //only string allowed
 	cout << x << endl;
 	
 	
@@ -58,5 +60,18 @@ int main() {
 	char str3[] = {'a','b'};
 	strcat(str3,"dsa");
 	cout << str3 << endl;
+	
+	cout << "==========string compare strcmp()============" << endl;
+	string str5 = "abcdefg";
+	string str6 = "abcdefg";
+	cout << str5.compare(str6) << endl; 
+	//return 0 if the same, otherwise not the same
+	
+	cout << "==========use char pointer as a string============" << endl;
+	char * charString = new char[100]; //can give without initialized  size of char array in heap, then it will concatenate with other contiguous memroy in heap (problematic)
+	// charString = {"asd"}; //not legal, but ok
+	//alternatively, use charString.strcat("asd")
+	strcat(charString, "abcdefg");
+	cout << charString << endl;
 	return 0;
 }

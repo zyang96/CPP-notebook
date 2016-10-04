@@ -2,7 +2,7 @@
 #include <vector>
 using namespace std;
 //=========================================
-void testArray (int array[], int * pt) {
+void testArray (int array[], int * pt) { //array[] and *pt can both be deemed as pointer to the int array head
 	cout <<array << endl;
 	cout << pt << endl;
 	cout <<*array << endl;
@@ -13,7 +13,7 @@ void testArray (int array[], int * pt) {
 int main() {
 	int array[] = {1,3,1,1,1};
 	for (int i:array) {
-		cout << i;
+		cout << i << " ";
 	}
 	cout << endl;
 	cout << sizeof(array)/sizeof(int);
