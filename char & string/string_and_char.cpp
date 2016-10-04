@@ -18,11 +18,11 @@ int main() {
 	cout << y << endl;
 	
 	cout << "===========initialize string with same chars============" << endl;
-	string a(10,'a');
-	cout << a << endl;
+	string aString(10,'a');
+	cout << aString << endl;
 	
 	cout << "==========size of string============" << endl;
-	cout << "size of the string is " << a.size() << endl;
+	cout << "size of the string is " << aString.size() << endl;
 	
 	
 	cout << "==========size of char pointer============" << endl;
@@ -49,19 +49,12 @@ int main() {
 	cout << x << endl;
 	
 	
-	cout << "==========string find substring===========" << endl;
-	string str4 = "ababababcbc";
-	int ind1 = str4.find("bcb");
-	cout << ind1 << " is the first matching pattern, and the first index of the searched patter" << endl;
-	cout << "it can find string with \"pattern\"(can be a string or a single letter\"b\"), or a single char using \'b\'" << endl;
-	delete[] myChar;
-	
 	cout << "===========stack \"may\" overflow here, but will overflow at the top===========" << endl;
 	char str3[] = {'a','b'};
 	strcat(str3,"dsa");
 	cout << str3 << endl;
 	
-	cout << "==========string compare strcmp()============" << endl;
+	cout << "==========string compare()============" << endl;
 	string str5 = "abcdefg";
 	string str6 = "abcdefg";
 	cout << str5.compare(str6) << endl; 
@@ -73,5 +66,50 @@ int main() {
 	//alternatively, use charString.strcat("asd")
 	strcat(charString, "abcdefg");
 	cout << charString << endl;
+	
+	cout << "==========use strlen() to find length of char array (string is not allowed)=======" << endl;
+	char myName[] = "my name is Zhongtao";
+	char name1[] = {'a','b','c'};
+	char * name2 = new char[100];
+	strcat(name2, "char pointer dynamically initialized");
+	cout << "the length of char array myName is " << strlen(myName) << endl;
+	cout << "the length of char array name1 is " << strlen(name1) << endl;
+	cout << "the length of char array name2 is " << strlen(name2) << endl;
+	
+	cout << "=========strcmp to compare two char arrays==========" << endl;
+	char a[] = "sameCharArray";
+	char b[] = "sameCharArray";
+	cout << strcmp(a,b) << endl;
+	cout << "=========strcmp to compare one char array and a string==========" << endl;
+	cout << strcmp(a,"sameCharArray") << endl; //***cannot take a single char
+	
+	cout << "=========strcmp to compare one char array pointers==========" << endl;
+	char *aa = new char[10];
+	char *bb = new char[10];
+	strcat(aa, "sameCharArray");
+	strcat(bb, "sameCharArray");
+	cout << strcmp(aa, bb) << endl;
+	cout << "=========strcmp to compare one char array and char array pointer==========" << endl;	
+	cout << strcmp(aa, aa) << endl;
+	
+	cout << "====assign char array pointer with char one by one and printed as a full string=====" << endl;
+	char *c = new char[2]; //insufficient allocation
+	c[0] = 'C';
+	c[1] = 'H';
+	c[2] = 'N';
+	cout << c << endl;
+	
+	cout << "===========string.find()============" << endl;
+	string s1 = "asd";
+	cout << "if found, return index of the first found sub string" << endl;
+	cout << s1.find("s") << endl;
+	cout << "if it cannot find, it return a largest number in long long type" << endl;
+	cout << s1.find("b") << endl;
+	
+	cout << "==========string find substring===========" << endl;
+	string str4 = "ababababcbc";
+	int ind1 = str4.find("bcb");
+	cout << ind1 << " is the first matching pattern, and the first index of the searched patter" << endl;
+	cout << "it can find string with \"pattern\"(can be a string or a single letter\"b\"), or a single char using \'b\'" << endl;
 	return 0;
 }

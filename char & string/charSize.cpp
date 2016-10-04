@@ -16,6 +16,7 @@ int main() {
 		cout << i << " ";
 	}
 	cout << endl;
+	cout << "=======================use sizeof()=====================" << endl;
 	cout << sizeof(array)/sizeof(int);
 	cout << endl;
 	cout << *array << endl;
