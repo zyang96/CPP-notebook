@@ -12,7 +12,11 @@ void printVec(vector<int> vec) {
 	cout << endl;
 }
 bool cmp(const int& a, const int& b) {
-    return a > b;
+    return a > b; //smaller integer has higher key
+}
+
+bool comparator(int x, int y) {
+	return abs(x) < abs(y); //larger abs value number has higher key
 }
 int main()
 {
@@ -170,5 +174,16 @@ int main()
 		cout << iter << " ";
 	}
 	cout << endl;
+	
+	
+	
+	cout << "==========max_element() and min_element in vector===========" << endl;
+	vector<int> x = {-1,-2,-3,-4};
+	vector<int>::iterator iter1 = max_element(x.begin(), x.end(), comparator);
+	vector<int>::iterator iter2 = min_element(x.begin(), x.end(), comparator);
+	cout << *iter1 << endl;
+	cout << *iter2 << endl;
+	cout << "index for max abs value is: " << iter1 - x.begin() << endl;
+	cout << "index for min abs value is: " << iter2 - x.begin() << endl;
 	return 0;
 }
