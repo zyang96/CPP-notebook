@@ -75,7 +75,7 @@ int main() {
 	{
 	  bool operator()(const int& x1, const int& x2) const
 	  {
-	    return x1 > x2;
+	    return x1 > x2; //smaller on top
 	  }
 	};
 
@@ -83,10 +83,10 @@ int main() {
 	{
 	  bool operator()(int x1, int x2)
 	  {
-	    return x1 < x2;
+	    return x1 < x2; //larger on top
 	  }
 	};
-	priority_queue<int, vector<int>, myComparator2> customQ4;
+	priority_queue<int, vector<int>, myComparator1> customQ4;
 	for (int i = 0; i < 10; i++) {
 		customQ4.push(rand()%100);
 	}
@@ -96,6 +96,9 @@ int main() {
 	}
 	
 	cout << "=====priority queue with customized class========" << endl;
+	cout << "priority queue comparator need use struct and define a bool operator inside comparator" << endl;
+	cout << "and the comparison is the opposite of the vector comparator" << endl;
+	cout << " priority_queue<int, vector<int>, comparator>" << endl;
 	Toast toast1(2, 200);
 	Toast toast2(1, 30);
 	Toast toast3(1, 10);
