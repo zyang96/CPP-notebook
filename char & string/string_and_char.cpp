@@ -111,5 +111,15 @@ int main() {
 	int ind1 = str4.find("bcb");
 	cout << ind1 << " is the first matching pattern, and the first index of the searched patter" << endl;
 	cout << "it can find string with \"pattern\"(can be a string or a single letter\"b\"), or a single char using \'b\'" << endl;
+
+	cout << "==========indexing string elemnt is a char===========" << endl;
+	string string10141 = "abcdefg";
+	if (string10141[0] == 'a') {
+		cout << "the first element is a" << endl;
+	}
+	cout << "==========reverse a string===========" << endl;
+	reverse(string10141.begin(), string10141.end());
+	cout << string10141 << endl;
+	
 	return 0;
 }

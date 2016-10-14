@@ -170,7 +170,7 @@ int main()
 	}
 	cout << endl;
 	cout << "new vector 2" << endl;
-	for (auto iter : vec2) {-
+	for (auto iter : vec2) {
 		cout << iter << " ";
 	}
 	cout << endl;
@@ -187,5 +187,18 @@ int main()
 	cout << "index for max abs value is: " << iter1 - x.begin() << endl;
 	cout << "index for min abs value is: " << iter2 - x.begin() << endl;
 	cout << "index for min abs value is: " << iter3 - x.begin() << endl;
+	
+	cout << "==========reverse a vector===========" << endl;
+	cout << "original sequence:" << endl; 
+	for (auto iter : vec2) {
+		cout << iter << " ";
+	}
+	cout << "reversed sequence:" << endl;
+	reverse(vec2.begin(), vec2.end());
+	for (auto iter : vec2) {
+		cout << iter << " ";
+	}
+	
+	
 	return 0;
 }
