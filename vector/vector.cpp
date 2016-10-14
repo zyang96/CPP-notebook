@@ -170,7 +170,7 @@ int main()
 	}
 	cout << endl;
 	cout << "new vector 2" << endl;
-	for (auto iter : vec2) {
+	for (auto iter : vec2) {-
 		cout << iter << " ";
 	}
 	cout << endl;
@@ -178,12 +178,14 @@ int main()
 	
 	
 	cout << "==========max_element() and min_element in vector===========" << endl;
-	vector<int> x = {-1,-2,-3,-4};
+	vector<int> x = {-2,1,-3,-4};
 	vector<int>::iterator iter1 = max_element(x.begin(), x.end(), comparator);
 	vector<int>::iterator iter2 = min_element(x.begin(), x.end(), comparator);
+	vector<int>::iterator iter3 = max_element(x.begin(), x.end());
 	cout << *iter1 << endl;
 	cout << *iter2 << endl;
 	cout << "index for max abs value is: " << iter1 - x.begin() << endl;
 	cout << "index for min abs value is: " << iter2 - x.begin() << endl;
+	cout << "index for min abs value is: " << iter3 - x.begin() << endl;
 	return 0;
 }

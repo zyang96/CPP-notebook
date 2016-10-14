@@ -49,7 +49,7 @@ int main() {
 	cout << x << endl;
 	
 	
-	cout << "===========stack \"may\" overflow here, but will overflow at the top===========" << endl;
+	cout << "===========stack \"may\" overflow here, but will not overflow at the top===========" << endl;
 	char str3[] = {'a','b'};
 	strcat(str3,"dsa");
 	cout << str3 << endl;
