@@ -199,6 +199,25 @@ int main()
 		cout << iter << " ";
 	}
 	
-	
+	cout << "==========resize a vector===========" << endl;
+	vector<int> vec10151 = {1,2,3,4};
+	int n10151 = 10;
+	vec10151.resize(n10151);
+	cout << "expand the vector, will be assign 0 to extra space" << endl;
+	for (auto iter : vec10151) {
+		cout << iter << endl;
+	}
+	int n10152 = 2;
+	vec10151.resize(n10152);
+	cout << " shrink the vector, extra space will be deleted" << endl;
+	for (auto iter : vec10151) {
+		cout << iter << endl;
+	}
+	cout << "expand the vector, and assign copies of 12345" << endl;
+	vec10151.resize(n10151,12345);
+	for (auto iter : vec10151) {
+		cout << iter << endl;
+	}
+	//when expanding the vector, if the size of the vector is larger than acceptable size in heap, it will copy and rellocate into somewhere else with extra space acceptable. realloc is used
 	return 0;
 }
