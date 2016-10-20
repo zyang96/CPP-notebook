@@ -121,5 +121,10 @@ int main() {
 	reverse(string10141.begin(), string10141.end());
 	cout << string10141 << endl;
 	
+	cout << "==========append char to string by using '+' ===========" << endl;
+	string str10191 = "abcdef";
+	str10191 = str10191 + 'z';
+	cout << str10191 << endl;
+	
 	return 0;
 }
