@@ -126,5 +126,16 @@ int main() {
 	str10191 = str10191 + 'z';
 	cout << str10191 << endl;
 	
+	cout << "==========append string using + ===========" << endl;
+	// string str10211 = "asd" + "dsa"; //this is not allowed however (initialization)
+	string str10211;
+	str10211 += 'a';
+	str10211 += "a";
+	str10211 += "abcde";
+	str10211 = str10211 + "jkl" + "fgh";
+	str10211 = str10211 + "jkl" + "fgh" + 's';
+	cout << str10211 << endl;
+	
+	
 	return 0;
 }
