@@ -219,5 +219,9 @@ int main()
 		cout << iter << endl;
 	}
 	//when expanding the vector, if the size of the vector is larger than acceptable size in heap, it will copy and rellocate into somewhere else with extra space acceptable. realloc is used
+	
+	cout << "==========initialize a 2d vector directoy without having seperate initialization===========" << endl;
+	vector<vector<int>> vec10221(10, vector<int> (10,12));
+	cout << vec10221[1][2];
 	return 0;
 }
