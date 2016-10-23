@@ -136,6 +136,37 @@ int main() {
 	str10211 = str10211 + "jkl" + "fgh" + 's';
 	cout << str10211 << endl;
 	
+	cout << "==========insert===========" << endl;
+	string str102311="to be question";
+	string str102312="the ";
+	string str102313="or not to be";
+	string::iterator it;
+
+	  // used in the same order as described above:
+	str102311.insert(6,str102312);                 // to be (the )question
+	str102311.insert(6,str102313,3,4);             // to be (not )the question
+	str102311.insert(10,"that is cool",8);    // to be not (that is )the question
+	str102311.insert(10,"to be ");            // to be not (to be )that is the question
+	str102311.insert(15,1,':');               // to be not to be(:) that is the question
+	it = str102311.insert(str102311.begin()+5,','); // to be(,) not to be: that is the question (it will be the iterator to "\'")
+	str102311.insert (str102311.end(),3,'.');       // to be, not to be: that is the question(...)
+	str102311.insert (it+2,str102313.begin(),str102313.begin()+3); // (or )
+
+	cout << str102311 << '\n';
+	cout << *it << '\n';
+	
+	cout << "==========erase 3 methods ===========" << endl;
+	string str102314 ("This is an example sentence.");
+	cout << str102314 << '\n';
+	                                           // "This is an example sentence."
+	str102314.erase (10,8);                        //            ^^^^^^^^
+	cout << str102314 << '\n';
+	                                         // "This is an sentence."
+	str102314.erase (str102314.begin()+9);               //           ^
+	cout << str102314 << '\n';
+	                                         // "This is a sentence."
+	str102314.erase (str102314.begin()+5, str102314.end()-9);  //       ^^^^^
+	cout << str102314 << '\n';
 	
 	return 0;
 }
