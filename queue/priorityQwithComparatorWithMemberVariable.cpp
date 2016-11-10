@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdlib.h>
 #include <queue>
 #include <time.h>
 #include <vector>
@@ -38,13 +39,13 @@ std::vector<Points> kNearestPoints(std::vector<Points> input, Points origin, int
 }
 int main() {
     int size = 10;
-    srand((uint16_t)time(NULL));
+    srand((uint)time(NULL));
     std::vector<Points> input;
     for (int i = 0; i < size; i++) {
-        input.push_back(Points(rand() % 10, 0));
+        input.push_back(Points(rand() % 10, rand() % 10));
         std::cout << input.back().x << " " << input.back().y << "\n";
     }
-    Points origin(0, 0);
+    Points origin(10, 10);
     std::cout << "Results are: \n";
     std::vector<Points> result = kNearestPoints(input, origin, 5);
     for (int i = 0; i < result.size(); i++) {

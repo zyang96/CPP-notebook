@@ -20,10 +20,21 @@ int main()
 	
 
 //************iterating over unordered_set*********
+	
 	unordered_set<string> myset1 = {"red", "green", "blue"};
 	for (unordered_set<string>::iterator itr = myset1.begin(); itr != myset1.end(); itr++) {
 		cout << *itr << endl;
 	}
+//************indexing unordered_set or unordered_map*********
+	cout << "===============indexing the unordered_set or map (opposite order as the order inserted in)===========" << endl;
+	unordered_set<string>::iterator itr111101 = next(myset1.begin(), 0);
+	cout << *itr111101 << endl;
+	itr111101 = next(myset1.begin(), 1);
+	cout << *itr111101 << endl;
+	itr111101 = next(myset1.begin(), 2);
+	cout << *itr111101 << endl;
+	
+	cout << "=========================================" << endl;
 
 //************Delete single element*********
 	//remove by itr
