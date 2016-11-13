@@ -56,5 +56,10 @@ int main()
 //************accessing element's function use (*itr) *********
 	itr = myset.find("green");
 // 	cout << (*itr).size() << endl; //parenthesis is required to access the function of the *itr, and it is general for all iterators
+	cout << "================swap two set or map=========================" << endl;
+	unordered_set<string> st1113171;
+	unordered_set<string> st1113172;
+	swap(st1113171, st1113172);
+	
 	return 0;
 }
