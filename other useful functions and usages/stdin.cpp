@@ -10,7 +10,7 @@ int main() {
 	cout << "=========handle stdin==========" << endl;
 	string input;
 	string inputNumber;
-	getline(cin, input
+	getline(cin, input);
 	int num;
 	getline(cin, inputNumber);
 	num = stoi(inputNumber);

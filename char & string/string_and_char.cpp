@@ -106,6 +106,12 @@ int main() {
 	cout << "if it cannot find, it return a largest number in long long type" << endl;
 	cout << s1.find("b") << endl;
 	
+	cout << "===========string.find() with starting index============" << endl;
+	string str1115161 = "my name is Zhongtao again my name is Zhongtao";
+	cout << "the first Zhongtao is found at index: " << str1115161.find("Zhongtao") << endl;
+	int firstFoundIndex = str1115161.find("Zhongtao");
+	cout << "the second Zhongtao is found at index:" << str1115161.find("Zhongtao", firstFoundIndex = 1) << endl; //if want to skip the first index of zhongtao, need to use firstFoundIndex + 1. And the returned index is the global index of the second Zhongtao
+	
 	cout << "==========string find substring===========" << endl;
 	string str4 = "ababababcbc";
 	int ind1 = str4.find("bcb");
