@@ -15,10 +15,10 @@ void printVector(vector<int> * vec)
 }
 int main() {
 	vector<int> sequence,ret;
-	int arraySize = 1000000;
+	int arraySize = 10;
 	for(int i=0; i<arraySize; i++) 
 	{
-		sequence.push_back(rand());
+		sequence.push_back(rand() % 100);
 	}
 	// printVector(&sequence);
 	
@@ -36,22 +36,33 @@ int main() {
 	return 0;
 }
 
-
-void quickSort(vector<int> &arr, int left, int right)
-{
-	int pivot = arr[(left + right) / 2];
+void quickSort(vector<int> &arr, int left, int right) {
+	int pivot = arr[left + (right - left) / 2];
 	int i = left, j = right;
 	while (i <= j) {
 		while (arr[i] < pivot) i++;
 		while (arr[j] > pivot) j--;
-		if (i <= j) {
-			int temp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = temp;
-			i++;
-			j--;
-		}
+		if (i <= j) swap(arr[i++], arr[j--]);
 	}
 	if (left < j) quickSort(arr, left, j);
-	if (i < right) quickSort(arr, i, right);
+	if (right > i) quickSort(arr, i, right);
 }
+
+// void quickSort(vector<int> &arr, int left, int right)
+// {
+// 	int pivot = arr[(left + right) / 2];
+// 	int i = left, j = right;
+// 	while (i <= j) {
+// 		while (arr[i] < pivot) i++;
+// 		while (arr[j] > pivot) j--;
+// 		if (i <= j) {
+// 			int temp = arr[i];
+// 			arr[i] = arr[j];
+// 			arr[j] = temp;
+// 			i++;
+// 			j--;
+// 		}
+// 	}
+// 	if (left < j) quickSort(arr, left, j);
+// 	if (i < right) quickSort(arr, i, right);
+// }
